@@ -53,6 +53,10 @@
 .itp-btn.small.icon { width: 26px; padding: 0; }
 .itp-btn.block { width: 100%; }
 .itp-btn.danger:hover { color: var(--danger); }
+/* two buttons that read as one: Export | ZIP */
+.itp-btn-pair { display: inline-flex; }
+.itp-btn-pair > .itp-btn:not(:last-child) { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.itp-btn-pair > .itp-btn + .itp-btn { border-top-left-radius: 0; border-bottom-left-radius: 0; border-left-color: color-mix(in srgb, var(--accent-ink) 22%, transparent); }
 .itp-link { background: none; border: 0; padding: 0; color: var(--muted); cursor: pointer; font-size: var(--fs-sm); text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 3px; }
 .itp-link:hover { color: var(--text); text-decoration-color: currentColor; }
 .itp kbd { font: 500 10.5px/1 var(--font-mono); padding: 3px 5px; border-radius: 4px; border: 1px solid var(--line-strong); color: var(--muted); background: var(--raised); }
