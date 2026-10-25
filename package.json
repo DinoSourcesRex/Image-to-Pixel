@@ -58,6 +58,9 @@
     "./dist/image-to-pixel.js",
     "./dist/image-to-pixel.min.js"
   ],
+  "bin": {
+    "glamour": "bin/glamour.mjs"
+  },
   "files": [
     "dist",
     "lib",
@@ -87,6 +90,7 @@
   "devDependencies": {
     "esbuild": "^0.25.12",
     "highlight.js": "^11.12.0",
-    "marked": "^15.0.12"
+    "marked": "^15.0.12",
+    "pngjs": "^7.0.0"
   }
 }
