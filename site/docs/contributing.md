@@ -30,7 +30,7 @@ All scripts are plain Node, so they behave the same in PowerShell, cmd, bash and
 | --- | --- |
 | `npm run build` | Library bundles into `dist/` |
 | `npm run build:site` | Bundles + the static site into `_site/` |
-| `npm run dev` | Build, serve at `http://localhost:8080/Image-to-Pixel/`, rebuild on change |
+| `npm run dev` | Build, serve at `http://localhost:5246/Image-to-Pixel/`, rebuild on change |
 | `npm run preview` | Serve `_site/` as GitHub Pages would |
 | `npm test` | Build the site, then `node --test` |
 | `npm run screenshots` | Headless screenshots of the site in both themes (needs Playwright) |

@@ -14,7 +14,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, '_site');
 const BASE = '/Image-to-Pixel/';
-const PORT = Number(process.env.PORT) || 8080;
+const PORT = Number(process.env.PORT) || 5246;
 const dev = process.argv.includes('--dev');
 
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json', '.woff2': 'font/woff2', '.map': 'application/json', '.gif': 'image/gif', '.txt': 'text/plain' };

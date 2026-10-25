@@ -53,7 +53,7 @@ Node 22. Every script is plain Node, so it works the same in PowerShell, bash an
 
 ```bash
 npm install
-npm run dev          # http://localhost:8080/Image-to-Pixel/, rebuilds on change
+npm run dev          # http://localhost:5246/Image-to-Pixel/, rebuilds on change
 npm test             # build dist/ and _site/, then node --test
 npm run build:site   # static site in _site/ (what GitHub Pages serves)
 npm run preview      # serve _site/
