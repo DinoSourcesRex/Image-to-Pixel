@@ -24,3 +24,14 @@ test('glamour re-palettes a PNG to Apollo at the same size', () => {
     assert.ok(apollo.has(hex), `${hex} not in Apollo`);
   }
 });
+
+test('glamour refuses to overwrite its input', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'glamour-'));
+  const file = join(dir, 'keep.png');
+  const src = new PNG({ width: 4, height: 4 });
+  src.data.fill(200);
+  writeFileSync(file, PNG.sync.write(src));
+  const before = readFileSync(file);
+  assert.throws(() => execFileSync('node', ['bin/glamour.mjs', file, '-o', file], { stdio: 'pipe' }));
+  assert.deepEqual(readFileSync(file), before);
+});

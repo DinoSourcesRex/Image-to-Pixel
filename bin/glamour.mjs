@@ -6,7 +6,7 @@
 
 import { parseArgs } from 'node:util';
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { basename, extname, join, dirname } from 'node:path';
+import { basename, extname, join, dirname, resolve } from 'node:path';
 import { PNG } from 'pngjs';
 import { createPixelator, getPalette, PALETTES, encodePNG, uniqueColors, normalizeSettings, mergeSettings, settingsFromJSON, DITHER_METHODS } from '../lib/index.js';
 
@@ -86,6 +86,8 @@ for (const input of inputs) {
     const r = await px.process({ width, height, data: new Uint8ClampedArray(data) }, settings);
     const name = `${basename(input, extname(input))}.${tag}.png`;
     const output = asFile ? v.out : join(v.out ?? dirname(input), name);
+    // ponytail: case-insensitive compare (Windows paths); a case-only rename on Linux is also refused
+    if (resolve(output).toLowerCase() === resolve(input).toLowerCase()) throw new Error('refusing to overwrite the input');
     mkdirSync(dirname(output), { recursive: true });
     // like the editor: 'source' brings the pixel art back up to the size of the (framed) input
     const size = settings.export.size === 'source'
