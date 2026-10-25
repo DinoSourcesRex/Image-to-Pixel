@@ -10,7 +10,7 @@ Two remotes, two long-lived branches:
 | | remote | branch | what it is |
 |---|---|---|---|
 | Tezumie's original | `upstream` (push URL `NO_PUSH_TO_UPSTREAM`, on purpose) | `upstream/main` | the only source of `main` |
-| The user's fork | `origin` | `main` | clean mirror of Tezumie's `main`; nothing of the user's, ever |
+| The user's fork | `origin` | `main` | clean mirror of Tezumie's `main`; nothing of the user's, ever. Ruleset "protect main" only lets it move by syncing from upstream (`gh repo sync` / Sync fork), and blocks force-push and deletion |
 | | | `glamour` | the user's version, the fork's default branch; ruleset requires a PR, blocks force-push and deletion |
 
 Everything the user builds goes: feature branch -> PR -> `glamour`. Updates from Tezumie go: `upstream/main` -> `main` (fast-forward) -> merge into a sync branch -> PR -> `glamour`.
