@@ -53,7 +53,7 @@
 .itp-btn.small.icon { width: 26px; padding: 0; }
 .itp-btn.block { width: 100%; }
 .itp-btn.danger:hover { color: var(--danger); }
-/* two buttons that read as one: Export | ZIP */
+/* buttons that read as one: PNG | Export | ZIP */
 .itp-btn-pair { display: inline-flex; }
 .itp-btn-pair > .itp-btn:not(:last-child) { border-top-right-radius: 0; border-bottom-right-radius: 0; }
 .itp-btn-pair > .itp-btn + .itp-btn { border-top-left-radius: 0; border-bottom-left-radius: 0; border-left-color: color-mix(in srgb, var(--accent-ink) 22%, transparent); }
